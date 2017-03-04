@@ -37,14 +37,15 @@ exports = module.exports = function (req, res) {
             updater.process(req.body, {
                 flashErrors: true,
                 fields: 'content2',
-                errorMessage: 'There was a problem submitting your enquiry:',
+                errorMessage: '保存数据错误:',
             }, function (err) {
                 if (err) {
                     locals.validationErrors = err.errors;
+                    next();
                 } else {
-                    locals.enquirySubmitted = true;
+                    res.redirect('/case/' + locals.filters.post);
                 }
-                next(err);
+
             });
         });
 
