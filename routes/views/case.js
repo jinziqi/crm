@@ -21,10 +21,8 @@ exports = module.exports = function (req, res) {
         var q = keystone.list('Case').paginate({
             page: req.query.page || 1,
             perPage: 10,
-            maxPages: 10,
             filters: {
-                state: 'published',
-                accessUsers :  {$in: ["58bae024b84cae31094da098"]}
+                accessUsers :  {$in: [locals.user._id]}
             },
         })
             .sort('-publishedDate')

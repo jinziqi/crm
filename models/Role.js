@@ -12,8 +12,11 @@ var Role = new keystone.List('Role', {
 
 Role.add({
 	name: { type: String, required: true, label:'名称' },
+    readPermission: { type: String, height: 150, label:'可见字段' },
+    writePermission: { type: String, height: 150, label:'可写字段' },
 });
 
 Role.relationship({ ref: 'User', path: 'role' });
 
+Role.defaultColumns = 'name,readPermission,writePermission';
 Role.register();

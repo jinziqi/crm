@@ -17,13 +17,8 @@ Case.add({
     client: { type: Types.Relationship, ref: 'User', index: true, label:'客户'},
 	accessUsers: { type: Types.Relationship, ref: 'User', index: true, many: true, label:'用户' },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' }, label:'日期' },
-	content: {
-		brief: { type: Types.Html, wysiwyg: true, height: 150, label:'内容' },
-	},
-});
-
-Case.schema.virtual('content.full').get(function () {
-	return this.content.extended || this.content.brief;
+	content: { type: Types.Html, wysiwyg: true, height: 150, label:'内容'},
+    content2: { type: Types.Textarea, wysiwyg: true, height: 150, label:'内容2'},
 });
 
 Case.defaultColumns = 'name, state|20%, author|20%, publishedDate|20%';

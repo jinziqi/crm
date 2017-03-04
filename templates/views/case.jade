@@ -8,15 +8,15 @@ block content
         .col-sm-8.col-md-9
             if data.cases.results.length
                 if data.cases.totalPages > 1
-                    h4.text-weight-normal Showing
+                    h4.text-weight-normal 显示
                         strong #{data.cases.first}
-                        |  to
+                        |  到
                         strong #{data.cases.last}
-                        |  of
+                        |  ，总共
                         strong #{data.cases.total}
-                        |  posts.
+                        |  个案件.
                 else
-                    h4.text-weight-normal Showing #{utils.plural(data.cases.results.length, '* post')}.
+                    h4.text-weight-normal 显示 #{data.cases.results.length} 个案件.
                 .blog
                     each post in data.cases.results
                         +post(post)
