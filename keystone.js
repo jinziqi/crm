@@ -67,7 +67,6 @@ keystone.set('email tests', require('./routes/emails'));
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
     cases: 'cases',
-	enquiries: 'enquiries',
 	users: ['users', 'roles'],
 });
 
