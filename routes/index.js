@@ -36,7 +36,7 @@ exports = module.exports = function (app) {
 	// Views
     app.get('/', middleware.requireUser, routes.views.case);
 	app.get('/blog/:category?', routes.views.blog);
-	app.get('/case/:post', routes.views.view);
+	app.all('/case/:post', routes.views.view);
 	app.all('/contact', routes.views.contact);
 
 

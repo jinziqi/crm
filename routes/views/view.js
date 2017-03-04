@@ -1,4 +1,5 @@
-var keystone = require('keystone');
+var keystone = require('keystone'),
+    Case = keystone.list('Case');
 
 exports = module.exports = function (req, res) {
 
@@ -14,16 +15,39 @@ exports = module.exports = function (req, res) {
         fields: keystone.list('Case').fields,
         case: []
     };
+    locals.validationErrors = {};
 
     view.on('init', function (next) {
         var q = keystone.list('Role').model.findById(locals.user.role);
         q.exec(function (err, result) {
             locals.role = {
-                read: result.readPermission.split('|'),
-                write: result.writePermission.split('|')
+                read: result.readPermission ? result.readPermission.split('|') : [],
+                write: result.writePermission ? result.writePermission.split('|') : []
             };
             next(err);
         });
+    });
+
+    view.on('post', { action: 'save' }, function (next) {
+
+        var q = keystone.list('Case').model.findById(locals.filters.post);
+        q.exec(function (err, result) {
+            var updater = result.getUpdateHandler(req);
+
+            updater.process(req.body, {
+                flashErrors: true,
+                fields: 'content2',
+                errorMessage: 'There was a problem submitting your enquiry:',
+            }, function (err) {
+                if (err) {
+                    locals.validationErrors = err.errors;
+                } else {
+                    locals.enquirySubmitted = true;
+                }
+                next(err);
+            });
+        });
+
     });
 
 
@@ -51,6 +75,7 @@ exports = module.exports = function (req, res) {
                         name: field.label,
                         value: value,
                         type: field.type,
+                        key: key,
                         edit: false
                     };
                     if(locals.role.write.indexOf(field.label) !== -1) {
@@ -63,6 +88,8 @@ exports = module.exports = function (req, res) {
         });
 
     });
+
+
 
     // Render the view
     view.render('view');
