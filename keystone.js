@@ -63,6 +63,8 @@ keystone.set('email locals', {
 // Load your project's email test routes
 keystone.set('email tests', require('./routes/emails'));
 
+// Customize login logo
+keystone.set('signin logo', null);
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
