@@ -1,7 +1,9 @@
 extends ../layouts/default
 
 mixin post(post)
-    h2: a(href='/case/' + post.id)= post.name
+    tr
+        td: a(href='/case/' + post.id)= post.name
+        td: a(href=post.url)= post.url
 
 block content
     .container: .row
@@ -17,9 +19,14 @@ block content
                         |  个案件.
                 else
                     h4.text-weight-normal 显示 #{data.cases.results.length} 个案件.
-                .blog
-                    each post in data.cases.results
-                        +post(post)
+                table.table
+                    thead
+                        tr
+                            th 名称
+                            th 网址
+                    tbody
+                        each post in data.cases.results
+                            +post(post)
 
                 if data.cases.totalPages > 1
                     ul.pagination

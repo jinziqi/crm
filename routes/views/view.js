@@ -36,7 +36,6 @@ exports = module.exports = function (req, res) {
 
             updater.process(req.body, {
                 flashErrors: true,
-                fields: 'content2',
                 errorMessage: '保存数据错误:',
             }, function (err) {
                 if (err) {
