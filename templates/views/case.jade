@@ -1,0 +1,38 @@
+extends ../layouts/default
+
+mixin post(post)
+    h2: a(href='/case/' + post.id)= post.name
+
+block content
+    .container: .row
+        .col-sm-8.col-md-9
+            if data.cases.results.length
+                if data.cases.totalPages > 1
+                    h4.text-weight-normal Showing
+                        strong #{data.cases.first}
+                        |  to
+                        strong #{data.cases.last}
+                        |  of
+                        strong #{data.cases.total}
+                        |  posts.
+                else
+                    h4.text-weight-normal Showing #{utils.plural(data.cases.results.length, '* post')}.
+                .blog
+                    each post in data.cases.results
+                        +post(post)
+
+                if data.cases.totalPages > 1
+                    ul.pagination
+                        if data.cases.previous
+                            li: a(href='?page=' + data.cases.previous): span.glyphicon.glyphicon-chevron-left
+                        else
+                            li.disabled: a(href='?page=' + 1): span.glyphicon.glyphicon-chevron-left
+                        each p, i in data.cases.pages
+                            li(class=data.cases.currentPage == p ? 'active' : null)
+                                a(href='?page=' + (p == '...' ? (i ? data.cases.totalPages : 1) : p ))= p
+                        if data.cases.next
+                            li: a(href='?page=' + data.cases.next): span.glyphicon.glyphicon-chevron-right
+                        else
+                            li.disabled: a(href='?page=' + data.cases.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
+            else
+                h3.text-muted There are no cases yet.
