@@ -23,7 +23,7 @@ exports = module.exports = function (req, res) {
 
     view.on('init', function (next) {
         if(!locals.user.role) {
-            return next(err);
+            return next();
         }
         var q = keystone.list('Role').model.findById(locals.user.role);
         q.exec(function (err, result) {
