@@ -20,7 +20,8 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: '首页', key: 'case', href: '/' },
-		{ label: '批次', key: 'batch', href: '/batch'}
+		{ label: '批次', key: 'batch', href: '/batch'},
+        { label: '导入', key: 'import', href: '/import'},
 	];
 	res.locals.user = req.user;
 	next();

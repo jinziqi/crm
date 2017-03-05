@@ -84,7 +84,14 @@ exports = module.exports = function (req, res) {
             }
         }
 
-        var q = keystone.list('Case').model.update({},updated_vals,{ multi: true });
+        var filter = {
+            accessUsers :  {$in: [locals.user._id]}
+        };
+        if(req.query.batch) {
+            filter.batch = {$in: [req.query.batch]};
+        }
+
+        var q = keystone.list('Case').model.update(filter,updated_vals,{ multi: true });
         q.exec(function (err, result) {
             if (err) {
                 next(err);

@@ -21,7 +21,7 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
-
+var multer  = require('multer');
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
@@ -31,14 +31,18 @@ var routes = {
 	views: importRoutes('./views'),
 };
 
+var upload = multer({ dest: 'uploads/' });
+
 // Setup Route Bindings
 exports = module.exports = function (app) {
+
 	// Views
     app.get('/', middleware.requireUser, routes.views.case);
 	app.all('/case/:post', routes.views.view);
 	app.all('/contact', routes.views.contact);
 	app.get('/batch', routes.views.batch);
-
+	app.all('/import', upload.single('import_file'), routes.views.import);
+	app.get('/import/template', routes.views.template);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 

@@ -1,0 +1,10 @@
+extends ../layouts/default
+
+block content
+    .container: .row: .col-sm-8.col-md-9
+        h3 Import
+        form(method="post", enctype="multipart/form-data")
+            input(type="file", name="import_file")
+            button(type="submit")= "Submit"
+
+        p: a(href="/import/template") Download Template

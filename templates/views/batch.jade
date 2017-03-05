@@ -2,7 +2,7 @@ extends ../layouts/default
 
 mixin post(post)
     tr
-        td: a(href='/batch/' + post.id)= post.name
+        td: a(href='/?batch=' + post.id)= post.name
 
 block content
     .container: .row
