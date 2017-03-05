@@ -13,7 +13,8 @@ var Case = new keystone.List('Case', {
 Case.add({
 	name: { type: String, required: true, label:'名称' },
 	identifierNumber: {type: Number, label:'编号'},
-	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true, label:'状态' },
+	state: { type: Types.Select, options: '未处理, 完成', default: '未处理', index: true, label:'状态' },
+	batch: {type: Types.Relationship, ref: 'Batch', label:'批次', many: true},
     client: { type: Types.Relationship, ref: 'User', index: true, label:'客户'},
 	url: {type: Types.Url, label:'网址'},
 	accessUsers: { type: Types.Relationship, ref: 'User', index: true, many: true, label:'可见用户' },

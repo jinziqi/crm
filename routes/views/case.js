@@ -8,12 +8,13 @@ exports = module.exports = function (req, res) {
 
     // Init locals
     locals.section = 'case';
-    // locals.filters = {
-    //     category: req.params.category,
-    // };
+    locals.filters = {
+        batch: req.query.batch,
+    };
     locals.data = {
         cases: [],
     };
+    locals.data.batch = req.query.batch ? '?batch=' + req.query.batch : '';
 
     // Load the posts
     view.on('init', function (next) {

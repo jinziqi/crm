@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+mixin post(post)
+    tr
+        td: a(href='/batch/' + post.id)= post.name
+
+block content
+    .container: .row
+        .col-sm-8.col-md-9
+            table.table
+                thead
+                    tr
+                        th 名称
+                tbody
+                    each post in data.batches
+                        +post(post)
+

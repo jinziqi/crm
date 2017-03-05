@@ -9,6 +9,10 @@ block content
     .container: .row
         .col-sm-8.col-md-9
             if data.cases.results.length
+
+                a.btn.btn-primary(href='/case/bulk' + data.batch)="批量修改"
+                a.btn.btn-primary(href='/case/new')="添加"
+
                 if data.cases.totalPages > 1
                     h4.text-weight-normal 显示
                         strong #{data.cases.first}

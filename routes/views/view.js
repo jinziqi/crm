@@ -57,42 +57,90 @@ exports = module.exports = function (req, res) {
 
     });
 
+    view.on('post', {action: 'new'}, function (next) {
+        var newCase = new Case.model();
+        var updater = newCase.getUpdateHandler(req);
+        updater.process(req.body, {
+            flashErrors: true,
+            errorMessage: '保存数据错误:',
+        }, function (err) {
+            if (err) {
+                locals.validationErrors = err.errors;
+                next();
+            } else {
+                res.redirect('/');
+            }
+
+        });
+    });
+
+    view.on('post', {action:'bulk'}, function (next) {
+        var updated_vals = {};
+        for(var key in locals.data.fields) {
+            var field = locals.data.fields[key];
+
+            if(req.body[key] && locals.role.write.indexOf(field.label) !== -1) {
+                updated_vals[key] = req.body[key];
+            }
+        }
+
+        var q = keystone.list('Case').model.update({},updated_vals,{ multi: true });
+        q.exec(function (err, result) {
+            if (err) {
+                next(err);
+            } else {
+                res.redirect('/');
+            }
+        });
+    });
+
+    var generateViewData = function (result) {
+        locals.data.case.name = result.name;
+        for(var key in locals.data.fields) {
+            var field = locals.data.fields[key];
+
+            if(field.type !== 'relationship') {
+                if(locals.role.read.indexOf(field.label) === -1) {
+                    continue;
+                }
+                var value;
+                if(field.type==='date' && result[key]) {
+                    value = result._[key].format('YYYY-MM-DD');
+                } else {
+                    value = result[key];
+                }
+                var fieldData = {
+                    name: field.label,
+                    value: value,
+                    type: field.type,
+                    key: key,
+                    edit: false
+                };
+                if(locals.role.write.indexOf(field.label) !== -1) {
+                    fieldData.edit = true;
+                }
+                locals.data.case.push(fieldData);
+            }
+        }
+    };
+
 
     // Load the current post
     view.on('init', function (next) {
+        if(locals.filters.post !== 'new' && locals.filters.post !== 'bulk') {
+            var q = keystone.list('Case').model.findById(locals.filters.post);
 
-        var q = keystone.list('Case').model.findById(locals.filters.post);
+            q.exec(function (err, result) {
+                generateViewData(result);
+                locals.data.action = 'save';
+                next(err);
+            });
+        } else {
+            locals.data.action = locals.filters.post;
+            generateViewData({});
+            next();
+        }
 
-        q.exec(function (err, result) {
-            locals.data.case.name = result.name;
-            for(var key in locals.data.fields) {
-                var field = locals.data.fields[key];
-
-                if(field.type !== 'relationship') {
-                    if(locals.role.read.indexOf(field.label) === -1) {
-                        continue;
-                    }
-                    var value;
-                    if(field.type==='date') {
-                        value = result._[key].format('YYYY-MM-DD');
-                    } else {
-                        value = result[key];
-                    }
-                    var fieldData = {
-                        name: field.label,
-                        value: value,
-                        type: field.type,
-                        key: key,
-                        edit: false
-                    };
-                    if(locals.role.write.indexOf(field.label) !== -1) {
-                        fieldData.edit = true;
-                    }
-                    locals.data.case.push(fieldData);
-                }
-            }
-            next(err);
-        });
 
     });
 

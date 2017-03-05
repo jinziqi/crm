@@ -69,7 +69,7 @@ keystone.set('signin logo', null);
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-    cases: 'cases',
+    cases: ['cases','batches'],
 	users: ['users', 'roles'],
 });
 
