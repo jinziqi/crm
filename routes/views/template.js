@@ -40,10 +40,11 @@ exports = module.exports = function (req, res) {
     wb.SSF = {};
     wb.SheetNames = [];
 
-    var data = [];
+    var data = ['id'];
     var fields = keystone.list('Case').fields;
     for(var key in fields) {
-        data.push(fields[key].label);
+        if(fields[key].type !== 'relationship')
+            data.push(fields[key].label);
     }
     var ws = sheet_from_array_of_arrays([data]);
     var ws_name = "Sheet1";
