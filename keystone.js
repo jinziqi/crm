@@ -25,6 +25,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'session store': 'mongo'
 });
 
 // Load your project's Models
