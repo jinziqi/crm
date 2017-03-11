@@ -37,10 +37,8 @@ var upload = multer({ dest: 'uploads/' });
 exports = module.exports = function (app) {
 
 	// Views
-    app.get('/', middleware.requireUser, routes.views.case);
-	app.all('/case/:post', routes.views.view);
-	app.all('/contact', routes.views.contact);
-	app.get('/batch', routes.views.batch);
+    app.get('/', middleware.requireUser, routes.views.index);
+
 	app.all('/import', upload.single('import_file'), routes.views.import);
 	app.get('/import/template', routes.views.template);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
