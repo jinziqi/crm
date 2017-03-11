@@ -69,8 +69,8 @@ keystone.set('signin logo', null);
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-    cases: ['cases','batches'],
-	users: ['users', 'roles'],
+    案件: ['cases','batches'],
+	用户: ['users', 'roles'],
 });
 
 // Start Keystone to connect to your database and initialise the web server

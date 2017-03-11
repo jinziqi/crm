@@ -73,5 +73,13 @@ Case.add({
     data55: {type: String, label:'案件备注'},
 });
 
+Case.customFilter = function (where, user) {
+    if(!user.isAdmin)
+        where.accessUsers = {$in: [user._id]};
+    return where;
+};
+
+Case.permission = true;
+
 Case.defaultColumns = 'name, state|20%, data4|20%, publishedDate|20%';
 Case.register();
