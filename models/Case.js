@@ -8,6 +8,7 @@ var Types = keystone.Field.Types;
 
 var Case = new keystone.List('Case', {
 	label: '案件',
+    plural: '案件'
 });
 
 Case.add({
