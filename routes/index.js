@@ -38,10 +38,7 @@ exports = module.exports = function (app) {
 
 	// Views
     app.get('/', middleware.requireUser, routes.views.index);
-
-	app.all('/import', upload.single('import_file'), routes.views.import);
-	app.get('/import/template', routes.views.template);
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
+	app.all('/import', [middleware.requireAdmin,upload.single('import_file')], routes.views.import);
+	app.get('/import/template', middleware.requireAdmin, routes.views.template);
 
 };

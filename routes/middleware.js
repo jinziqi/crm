@@ -53,3 +53,12 @@ exports.requireUser = function (req, res, next) {
 		next();
 	}
 };
+
+exports.requireAdmin = function (req, res, next) {
+    if (!req.user.isAdmin) {
+        req.flash('error', 'Permission Denied.');
+        res.redirect('/keystone/signin');
+    } else {
+        next();
+    }
+};
