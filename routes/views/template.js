@@ -50,11 +50,12 @@ exports = module.exports = function (req, res) {
     var ws_name = "Sheet1";
     wb.SheetNames.push(ws_name);
     wb.Sheets[ws_name] = ws;
-    XLSX.writeFile(wb, "template.xlsx");
+    var wbbuf = XLSX.write(wb, {
+        type: 'base64'
+    });
 
     res.setHeader('Content-disposition', 'attachment; filename=' + "template.xlsx");
     res.setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.end( new Buffer(wbbuf, 'base64') );
 
-    var filestream = fs.createReadStream("template.xlsx");
-    filestream.pipe(res);
 };
