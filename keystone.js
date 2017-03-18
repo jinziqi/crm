@@ -11,7 +11,7 @@ var keystone = require('keystone');
 
 keystone.init({
 	'name': 'CRM',
-	'brand': 'CRM',
+	'brand': '管理系统',
 
 	'sass': 'public',
 	'static': 'public',

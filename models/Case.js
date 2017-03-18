@@ -83,13 +83,14 @@ Case.add({
         立案法院: {type: String, label: '立案法院'},
         法院案号: {type: String, label: '法院案号'},
         案件状态: {type: Types.Select, options: '待立案,已立案,一审开庭,二审开庭,判决,和解/调解,撤诉', label: '案件状态'},
-        应赔偿金额: {type: String, label: '应赔偿金额'},
-        实际赔偿金额: {type: String, label: '实际赔偿金额'},
-        实际支付诉讼费: {type: String, label: '实际支付诉讼费'},
+        应赔偿金额: {type: Types.Money, label: '应赔偿金额'},
+        实际赔偿金额: {type: Types.Money, label: '实际赔偿金额'},
+        实际支付诉讼费: {type: Types.Money, label: '实际支付诉讼费'},
         撤诉原因: {type: Types.Select, options: '正常租片,管辖异议/错误,无法送达,主体不明/错误,证据不足,无赔偿能力', label: '撤诉原因'},
         执行状态: {type: Types.Select, options: '赔偿中,赔偿完毕,强制执行中,放弃', label: '执行状态'},
         诉讼备注: {type: String, label: '诉讼备注'},
     },
+    '备注',
     {
         案件备注: {type: String, label: '案件备注'},
     }
