@@ -15,7 +15,7 @@ User.add({
 	password: { type: Types.Password, initial: true, required: true, label:'密码' },
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'System Admin', index: true },
-	role: {type: Types.Relationship, ref: 'Role', label:'权限'}
+	role: {type: Types.Relationship, ref: 'Role', label:'权限'},
 });
 
 // Provide access to Keystone
@@ -26,7 +26,7 @@ User.schema.virtual('canAccessKeystone').get(function () {
 /**
  * Relationships
  */
-User.relationship({ ref: 'Case', path: 'cases', refPath: 'client' });
+User.relationship({ ref: 'Case', path: 'cases', refPath: 'accessUsers' });
 
 
 /**
