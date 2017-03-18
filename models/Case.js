@@ -103,7 +103,7 @@ Case.customFilter = function (where, user) {
 
 Case.schema.pre('save', function (next) {
     if(this.isNew) {
-        if(this.accessUsers.length === 0) {
+        if(this.accessUsers.length === 0 && this._req_user) {
             this.accessUsers.push(this._req_user._id);
         }
     }

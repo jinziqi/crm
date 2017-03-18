@@ -38,7 +38,7 @@ exports = module.exports = function (req, res) {
                     XLSX.utils.encode_cell({r: rowNum, c: colNum})
                     ];
                 if(nextCell) {
-                    var cellValue = nextCell.v;
+                    var cellValue = nextCell.w;
                     if(rowNum === 0) {
                         //load header
                         if(fields_map[cellValue]){
