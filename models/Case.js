@@ -8,18 +8,18 @@ var Types = keystone.Field.Types;
 
 var Case = new keystone.List('Case', {
 	label: '案件',
-    plural: '案件'
+    plural: '案件',
+    track: true
 });
 
 Case.add({
     name: {type: String, required: true, label: '名称'},
-    编号: {type: Number, label: '编号'},
-    状态: {type: Types.Select, options: '未处理, 完成', default: '未处理', index: true, label: '状态'},
     批次: {type: Types.Relationship, ref: 'Batch', label: '批次', many: true},
     accessUsers: {type: Types.Relationship, ref: 'User', index: true, many: true, label: '可见用户'},
     },
     '案件基本',
     {
+        案件编号: {type: Number, label: '案件编号'},
         案件标签: {type: String, label: '案件标签'},
         图片编号: {type: String, label: '图片编号'},
         侵权主体: {type: String, label: '侵权主体'},
@@ -113,5 +113,5 @@ Case.schema.pre('save', function (next) {
 
 Case.permission = true;
 
-Case.defaultColumns = 'name, state|20%, data4|20%, publishedDate|20%';
+Case.defaultColumns = 'name, state|20%, 侵权主体|20%, publishedDate|20%';
 Case.register();
