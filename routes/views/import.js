@@ -63,6 +63,7 @@ exports = module.exports = function (req, res) {
                         var cellValue = nextCell.w;
                         if(rowNum === 0) {
                             //load header
+                            cellValue = cellValue.trim();
                             if(fields_map[cellValue]){
                                 import_fields[colNum] = fields_map[cellValue];
                                 update_fields.push(fields_map[cellValue])
@@ -119,7 +120,7 @@ exports = module.exports = function (req, res) {
                             if(action === 'insert') {
                                 Case.updateItem(new Case.model(), row, {}, function (err) {
                                     if(err) {
-                                        locals.errors.push({row: rowNum, detail: err.detail});
+                                        locals.errors.push({row: rowNum + 1, detail: err.detail});
                                     }
                                     next();
                                 })
@@ -128,12 +129,12 @@ exports = module.exports = function (req, res) {
                                     if(model) {
                                         Case.updateItem(model, row, {fields:update_fields}, function (err) {
                                             if(err) {
-                                                locals.errors.push({row: rowNum, detail: err.detail});
+                                                locals.errors.push({row: rowNum + 1, detail: err.detail});
                                             }
                                             next();
                                         })
                                     } else {
-                                        locals.errors.push({row: rowNum, detail: {ID:{fieldLabel:'ID'}}});
+                                        locals.errors.push({row: rowNum + 1, detail: {ID:{fieldLabel:'ID'}}});
                                         next();
                                     }
 
