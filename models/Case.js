@@ -31,7 +31,7 @@ Case.add({
         销售商: {type: String, label: '销售商'},
         店铺: {type: String, label: '店铺'},
         侵权人主页链接: {type: Types.Url, label: '侵权人主页链接'},
-        侵权页面链接: {type: String, label: '侵权页面链接'},
+        侵权页面链接: {type: Types.Url, label: '侵权页面链接'},
         图片位置描述: {type: String, label: '图片位置描述'},
         页面内容描述: {type: String, label: '页面内容描述'},
         侵权形式: {
@@ -113,5 +113,5 @@ Case.schema.pre('save', function (next) {
 
 Case.permission = true;
 
-Case.defaultColumns = 'name, state|20%, 侵权主体|20%, publishedDate|20%';
+Case.defaultColumns = 'name|250px,批次,案件编号,侵权形式,图片编号,侵权主体,侵权页面链接,图片位置描述,页面内容描述,线索处理意见,放弃原因,案件状态';
 Case.register();
