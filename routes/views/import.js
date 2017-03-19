@@ -10,10 +10,13 @@ exports = module.exports = function (req, res) {
 
     // Set locals
     locals.section = 'import';
+    locals.errors = [];
 
     view.on('post', function (next) {
 
         var tasks = [];
+        var dataUpdates = [];
+
         var users, batches;
         tasks.push(function (next) {
             keystone.list('User').model.find().exec(function (err, result) {
@@ -29,7 +32,7 @@ exports = module.exports = function (req, res) {
             });
         });
 
-        tasks.push(function () {
+        tasks.push(function (next) {
             var fields_map = {};
             var fields = keystone.list('Case').fields;
             for(var key in fields) {
@@ -46,7 +49,8 @@ exports = module.exports = function (req, res) {
             var rowNum;
             var colNum;
             var import_fields = {};
-            var update_fields = {};
+            var update_fields = [];
+
             for(rowNum = range.s.r; rowNum <= range.e.r; rowNum++){
                 row = {};
                 action = 'insert';
@@ -61,7 +65,7 @@ exports = module.exports = function (req, res) {
                             //load header
                             if(fields_map[cellValue]){
                                 import_fields[colNum] = fields_map[cellValue];
-                                update_fields[fields_map[cellValue]] = 1;
+                                update_fields.push(fields_map[cellValue])
                             }
 
                         } else {
@@ -110,24 +114,47 @@ exports = module.exports = function (req, res) {
                 }
 
                 if(rowNum > 0 ) {
-                    if(action === 'insert') {
-                        var newCase = new Case.model(row);
-                        newCase.save();
-                    } else if (action === 'update') {
-                        keystone.list('Case').model.findOneAndUpdate({_id: updateId},row,{
-                            fields: update_fields
-                        }).exec();
-                    }
+                    (function (row, rowNum, action, updateId) {
+                        dataUpdates.push(function (next) {
+                            if(action === 'insert') {
+                                Case.updateItem(new Case.model(), row, {}, function (err) {
+                                    if(err) {
+                                        locals.errors.push({row: rowNum, detail: err.detail});
+                                    }
+                                    next();
+                                })
+                            } else if (action === 'update') {
+                                Case.model.findById(updateId, function (err, model) {
+                                    if(model) {
+                                        Case.updateItem(model, row, {fields:update_fields}, function (err) {
+                                            if(err) {
+                                                locals.errors.push({row: rowNum, detail: err.detail});
+                                            }
+                                            next();
+                                        })
+                                    } else {
+                                        locals.errors.push({row: rowNum, detail: {ID:{fieldLabel:'ID'}}});
+                                        next();
+                                    }
+
+                                });
+
+                            }
+                        });
+                    })(row, rowNum, action, updateId);
                 }
-
-
 
             }
 
             next();
+
         });
 
-        async.series(tasks);
+        async.series(tasks, function () {
+            async.parallel(dataUpdates, next);
+        });
+
+
 
     });
 

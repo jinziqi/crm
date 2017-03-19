@@ -8,3 +8,8 @@ block content
             button(type="submit")= "Submit"
 
         p: a(href="/import/template") Download Template
+
+        each error in errors
+            p: =error.row
+            each field in error.detail
+                p: =field.fieldLabel + '出错'
