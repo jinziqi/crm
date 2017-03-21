@@ -152,7 +152,7 @@ exports = module.exports = function (req, res) {
         });
 
         async.series(tasks, function () {
-            async.parallel(dataUpdates, next);
+            async.series(dataUpdates, next);
         });
 
 
