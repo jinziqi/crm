@@ -7,15 +7,15 @@ var Types = keystone.Field.Types;
  */
 
 var Case = new keystone.List('Case', {
-	label: '案件',
+    label: '案件',
     plural: '案件',
     track: true
 });
 
 Case.add({
-    name: {type: String, required: true, label: '名称'},
-    批次: {type: Types.Relationship, ref: 'Batch', label: '批次', many: true},
-    accessUsers: {type: Types.Relationship, ref: 'User', index: true, many: true, label: '可见用户'},
+        name: {type: String, required: true, label: '名称'},
+        批次: {type: Types.Relationship, ref: 'Batch', label: '批次', many: true},
+        accessUsers: {type: Types.Relationship, ref: 'User', index: true, many: true, label: '可见用户'},
     },
     '案件基本',
     {
@@ -40,7 +40,7 @@ Case.add({
         },
         "线索录入方ID": {type: String, label: '线索录入方ID'},
         线索批次: {type: String, label: '线索批次'},
-				线索批次内小序号: {type: Number, label: '线索批次内小序号'},
+        线索批次内小序号: {type: Number, label: '线索批次内小序号'},
         发现日期: {type: Types.Date, label: '发现日期'},
         发现人: {type: String, label: '发现人'},
     },
@@ -66,43 +66,43 @@ Case.add({
         公证状态: {type: Types.Select, options: '未申请,已申请,已保全,已出证', label: '公证状态'},
         申请公证日期: {type: String, label: '申请公证日期'},
         公证书编号: {type: String, label: '公证书编号'},
-				分摊公证成本: {type: Types.Money, label: '分摊公证成本'},
+        分摊公证成本: {type: Types.Money, label: '分摊公证成本'},
     },
     '线索处理意见',
     {
         线索处理批次: {type: String, label: '线索处理批次'},
-				线索处理意见: {type: Types.Select, options: '诉讼,放弃,暂缓', label: '线索处理意见'},
-				放弃原因: {type: Types.Select, options: '正常租片,主体不适格,保全不能', label: '放弃原因'},
-				线索处理备注: {type: String, label: '线索处理备注'},
-		},
-	  '证据材料',
-	  {
+        线索处理意见: {type: Types.Select, options: '诉讼,放弃,暂缓', label: '线索处理意见'},
+        放弃原因: {type: Types.Select, options: '正常租片,主体不适格,保全不能', label: '放弃原因'},
+        线索处理备注: {type: String, label: '线索处理备注'},
+    },
+    '证据材料',
+    {
         数码原图提供日期: {type: Types.Date, label: '数码原图提供日期'},
-				数码原图提供快递公司及单号: {type: String, label: '数码原图提供快递公司及单号'},
-				胶片提供日期: {type: Types.Date, label: '胶片提供日期'},
-				胶片提供快递公司及单号: {type: String, label: '胶片提供快递公司及单号'},
-				胶片回收日期: {type: Types.Date, label: '胶片回收日期'},
-				委托创作说明提供日期: {type: Types.Date, label: '委托创作说明快递公司及单号'},
-				其他证据名称: {type: String, label: '其他证据名称'},
-				其他证据提供日期: {type: Types.Date, label: '其他证据提供日期'},
-				其他证据提供快递公司及单号: {type: String, label: '其他证据提供快递公司日期及单号'},
-				提供证据备注: {type: String, label: '提供证据备注'},
-		},
-	  '以租代赔',
-	  {
-				是否以租代赔: {type: Types.Select, options: '是,否', label: '是否以租代赔'},
-				以租代赔批次: {type: Number, label: '以租代赔批次'},
-				最低谈判金额: {type: Types.Money, label: '最低谈判金额'},
-				以租代赔合同金额: {type: Types.Money, label: '以租代赔合同金额'},
+        数码原图提供快递公司及单号: {type: String, label: '数码原图提供快递公司及单号'},
+        胶片提供日期: {type: Types.Date, label: '胶片提供日期'},
+        胶片提供快递公司及单号: {type: String, label: '胶片提供快递公司及单号'},
+        胶片回收日期: {type: Types.Date, label: '胶片回收日期'},
+        委托创作说明提供日期: {type: Types.Date, label: '委托创作说明快递公司及单号'},
+        其他证据名称: {type: String, label: '其他证据名称'},
+        其他证据提供日期: {type: Types.Date, label: '其他证据提供日期'},
+        其他证据提供快递公司及单号: {type: String, label: '其他证据提供快递公司日期及单号'},
+        提供证据备注: {type: String, label: '提供证据备注'},
+    },
+    '以租代赔',
+    {
+        是否以租代赔: {type: Types.Select, options: '是,否', label: '是否以租代赔'},
+        以租代赔批次: {type: Number, label: '以租代赔批次'},
+        最低谈判金额: {type: Types.Money, label: '最低谈判金额'},
+        以租代赔合同金额: {type: Types.Money, label: '以租代赔合同金额'},
     },
     '诉讼',
     {
         "律师ID": {type: String, label: '律师ID'},
         诉讼批次: {type: String, label: '诉讼批次'},
         负责律所: {type: String, label: '负责律所'},
-				起诉书发出日期: {type: Types.Date, label: '起诉书发出日期'},
+        起诉书发出日期: {type: Types.Date, label: '起诉书发出日期'},
         起诉书发出快递公司及单号: {type: String, label: '起诉书发出快递公司及单号'},
-				案件受理日期: {type: String, label: '案件受理日期'},
+        案件受理日期: {type: String, label: '案件受理日期'},
         被告人: {type: String, label: '被告人'},
         立案法院: {type: String, label: '立案法院'},
         法院案号: {type: String, label: '法院案号'},
@@ -110,47 +110,47 @@ Case.add({
         应赔偿金额: {type: Types.Money, label: '应赔偿金额'},
         放弃诉讼原因: {type: Types.Select, options: '正常租片,管辖异议/错误,无法送达,主体不明/错误,证据不足,无赔偿能力', label: '放弃诉讼原因'},
         诉讼备注: {type: String, label: '诉讼备注'},
-		},
+    },
     '退费与赔偿',
     {
-			  预付诉讼费: {type: Types.Money, label: '预付诉讼费'},
-			  退换诉讼费日期: {type: Types.Date, label: '退还诉讼费日期'},
-			  退换诉讼费备注: {type: String, label: '退还诉讼费备注'},
-			  退还诉讼费（到律所）: {type: Types.Money, label: '退还诉讼费（到律所）'},
-		  	退还诉讼费（到公司）: {type: Types.Money, label: '退还诉讼费（到公司）'},
-	  		判决/调解赔偿金额: {type: Types.Money, label: '判决/调解赔偿金额'},
-		  	实际赔偿日期: {type: Types.Date, label: '实际赔偿日期'},
-			  赔偿款实际支付人: {type: String, label: '赔偿款实际支付人'},
-	  		实际赔偿金额（到律所）: {type: Types.Money, label: '实际赔偿金额（到律所）'},
-		  	实际赔偿金额（到公司）: {type: Types.Money, label: '实际赔偿金额（到公司）'},
-		  	赔偿款备注: {type: String, label: '赔偿款备注'},
-			  赔偿状态: {type: Types.Select, options: '赔偿中,赔偿完毕,强制执行中,放弃', label: '赔偿状态'},
-		},
+        预付诉讼费: {type: Types.Money, label: '预付诉讼费'},
+        退换诉讼费日期: {type: Types.Date, label: '退还诉讼费日期'},
+        退换诉讼费备注: {type: String, label: '退还诉讼费备注'},
+        "退还诉讼费（到律所）": {type: Types.Money, label: '退还诉讼费（到律所）'},
+        "退还诉讼费（到公司）": {type: Types.Money, label: '退还诉讼费（到公司）'},
+        "判决/调解赔偿金额": {type: Types.Money, label: '判决/调解赔偿金额'},
+        实际赔偿日期: {type: Types.Date, label: '实际赔偿日期'},
+        赔偿款实际支付人: {type: String, label: '赔偿款实际支付人'},
+        "实际赔偿金额（到律所）": {type: Types.Money, label: '实际赔偿金额（到律所）'},
+        "实际赔偿金额（到公司）": {type: Types.Money, label: '实际赔偿金额（到公司）'},
+        赔偿款备注: {type: String, label: '赔偿款备注'},
+        赔偿状态: {type: Types.Select, options: '赔偿中,赔偿完毕,强制执行中,放弃', label: '赔偿状态'},
+    },
     '收据',
     {
-  			退费收据开具日期: {type: Types.Date, label: '退费收据开具日期'},
-	  		退费收据快递公司及单号: {type: String, label: '退费收据快递公司及单号'},
-		  	退费收据备注: {type: String, label: '退费收据备注'},
-			  赔偿款收据开具日期: {type: Types.Date, label: '赔偿款收据开具日期'},
-			  赔偿款收据快递公司及单号: {type: String, label: '赔偿款收据快递公司及单号'},
-			  赔偿款收据备注: {type: String, label: '赔偿款收据备注'},
+        退费收据开具日期: {type: Types.Date, label: '退费收据开具日期'},
+        退费收据快递公司及单号: {type: String, label: '退费收据快递公司及单号'},
+        退费收据备注: {type: String, label: '退费收据备注'},
+        赔偿款收据开具日期: {type: Types.Date, label: '赔偿款收据开具日期'},
+        赔偿款收据快递公司及单号: {type: String, label: '赔偿款收据快递公司及单号'},
+        赔偿款收据备注: {type: String, label: '赔偿款收据备注'},
     },
     '备注',
     {
-  			案件状态总结: {type: Types.Select, options: '进行中,撤销,结案', label: '案件状态总结'},
-				案件备注: {type: String, label: '案件备注'},
+        案件状态总结: {type: Types.Select, options: '进行中,撤销,结案', label: '案件状态总结'},
+        案件备注: {type: String, label: '案件备注'},
     }
 );
 
 Case.customFilter = function (where, user) {
-    if(!user.isAdmin)
+    if (!user.isAdmin)
         where.accessUsers = {$in: [user._id]};
     return where;
 };
 
 Case.schema.pre('save', function (next) {
-    if(this.isNew) {
-        if(this.accessUsers.length === 0 && this._req_user) {
+    if (this.isNew) {
+        if (this.accessUsers.length === 0 && this._req_user) {
             this.accessUsers.push(this._req_user._id);
         }
     }
