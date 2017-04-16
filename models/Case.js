@@ -43,6 +43,7 @@ Case.add({
         线索批次内小序号: {type: Number, label: '线索批次内小序号'},
         发现日期: {type: Types.Date, label: '发现日期'},
         发现人: {type: String, label: '发现人'},
+        线索审核批注: {type: String, label: '线索审核批注'},
     },
     '案件筛选',
     {
