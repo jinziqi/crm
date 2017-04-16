@@ -57,6 +57,7 @@ Case.add({
         "代理商租片查询方ID": {type: String, label: '代理商租片查询方ID'},
         代理商租片查询批次: {type: String, label: '代理商租片查询批次'},
         代理商租片查询日期: {type: String, label: '代理商租片查询日期'},
+        华盖租片查询状态: {type: Types.Select, options: '未查询,查询中,数据比对中,完成', label: '华盖租片查询状态'},
         代理商租片查询状态: {type: Types.Select, options: '未查询,查询中,数据比对中,完成', label: '代理商租片查询状态'},
         代理商租片查询结果: {type: Types.Select, options: '有租片,无租片', label: '代理商租片查询结果'},
     },
