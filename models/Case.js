@@ -92,7 +92,7 @@ Case.add({
         胶片提供日期: {type: Types.Date, label: '胶片提供日期'},
         胶片提供快递公司及单号: {type: String, label: '胶片提供快递公司及单号'},
         胶片回收日期: {type: Types.Date, label: '胶片回收日期'},
-        委托创作说明提供日期: {type: Types.Date, label: '委托创作说明快递公司及单号'},
+        委托创作说明提供日期: {type: Types.Date, label: '委托创作说明提供日期'},
         其他证据名称: {type: String, label: '其他证据名称'},
         其他证据提供日期: {type: Types.Date, label: '其他证据提供日期'},
         其他证据提供快递公司及单号: {type: String, label: '其他证据提供快递公司日期及单号'},
