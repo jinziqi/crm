@@ -62,8 +62,6 @@ Case.add({
         全景租片查询状态: {type: Types.Select, options: '未查询,查询中,数据比对中,完成', label: '全景租片查询状态'},
         全景反馈日期: {type: Types.Date, label: '全景反馈日期'},
         全景租片查询结果: {type: Types.Select, options: '有租片,无租片,无结果', label: '全景租片查询结果'},
-        代理商租片查询状态: {type: Types.Select, options: '未查询,查询中,数据比对中,完成', label: '代理商租片查询状态'},
-        代理商租片查询结果: {type: Types.Select, options: '有租片,无租片', label: '代理商租片查询结果'},
     },
     '证据保全',
     {
@@ -98,7 +96,6 @@ Case.add({
         其他证据名称: {type: String, label: '其他证据名称'},
         其他证据提供日期: {type: Types.Date, label: '其他证据提供日期'},
         其他证据快递公司及单号: {type: String, label: '其他证据快递公司及单号'},
-        其他证据提供快递公司及单号: {type: String, label: '其他证据提供快递公司日期及单号'},
         提供证据备注: {type: String, label: '提供证据备注'},
     },
     '以租代赔',
