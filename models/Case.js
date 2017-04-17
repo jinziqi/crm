@@ -74,6 +74,7 @@ Case.add({
         申请公证日期: {type: String, label: '申请公证日期'},
         公证书编号: {type: String, label: '公证书编号'},
         分摊公证成本: {type: Types.Money, label: '分摊公证成本'},
+        公证取消原因: {type: Types.Select, options: '图片下线,主体不适格,其他', label: '公证取消原因'},
     },
     '线索处理意见',
     {
@@ -84,6 +85,8 @@ Case.add({
     },
     '证据材料',
     {
+        数码原图载体: {type: Types.Select, options: '光盘,电子文件,其他', label: '数码原图载体'},
+        数码原图载体数量: {type: Number, label: '数码原图载体数量'},
         数码原图提供日期: {type: Types.Date, label: '数码原图提供日期'},
         数码原图提供快递公司及单号: {type: String, label: '数码原图提供快递公司及单号'},
         胶片提供日期: {type: Types.Date, label: '胶片提供日期'},
