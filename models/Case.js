@@ -89,6 +89,11 @@ Case.add({
         放弃原因: {type: Types.Select, options: '正常租片,主体不适格,保全不能', label: '放弃原因'},
         线索处理备注: {type: String, label: '线索处理备注'},
     },
+    '移交律师',
+    {
+        移交批次: {type: Number, label: '移交批次'},
+        负责律所: {type: String, label: '负责律所'},
+    },
     '证据材料',
     {
         数码原图载体: {type: Types.Select, options: '光盘,电子文件,其他', label: '数码原图载体'},
@@ -112,12 +117,6 @@ Case.add({
         以租代赔批次: {type: Number, label: '以租代赔批次'},
         最低谈判金额: {type: Types.Money, label: '最低谈判金额'},
         以租代赔合同金额: {type: Types.Money, label: '以租代赔合同金额'},
-
-    },
-    '移交律师',
-    {
-        移交批次: {type: Number, label: '移交批次'},
-        负责律所: {type: String, label: '负责律所'},
     },
     '诉讼',
     {
