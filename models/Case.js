@@ -112,12 +112,16 @@ Case.add({
         以租代赔批次: {type: Number, label: '以租代赔批次'},
         最低谈判金额: {type: Types.Money, label: '最低谈判金额'},
         以租代赔合同金额: {type: Types.Money, label: '以租代赔合同金额'},
+
+    },
+    '移交律师',
+    {
+        移交批次: {type: Number, label: '移交批次'},
+        负责律所: {type: String, label: '负责律所'},
     },
     '诉讼',
     {
-        "律师ID": {type: String, label: '律师ID'},
         诉讼批次: {type: String, label: '诉讼批次'},
-        负责律所: {type: String, label: '负责律所'},
         公证书提供日期: {type: Types.Date, label: '公证书提供日期'},
         公证书提供数量: {type: Number, label: '公证书提供数量'},
         公证书提供快递公司及单号: {type: String, label: '公证书提供快递公司及单号'},
