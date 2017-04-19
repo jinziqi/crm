@@ -19,6 +19,7 @@ Case.add({
     },
     '案件基本',
     {
+        "案件批次": {type: String, label: '案件批次'},
         案件编号: {type: Number, label: '案件编号'},
         图片编号: {type: String, label: '图片编号'},
         "图片编号补正": {type: Types.Select, options: '编号有误需补正,补正完毕,无需补正', label: '图片编号补正'},
