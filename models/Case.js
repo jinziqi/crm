@@ -20,7 +20,6 @@ Case.add({
     '案件基本',
     {
         "案件批次": {type: Number, label: '案件批次'},
-        临时标签: {type: String, label: '临时标签'}
         案件编号: {type: Number, label: '案件编号'},
         图片编号: {type: String, label: '图片编号'},
         "图片编号补正": {type: Types.Select, options: '编号有误需补正,补正完毕,无需补正', label: '图片编号补正'},
@@ -42,7 +41,6 @@ Case.add({
             label: '侵权形式'
         },
         线索批次: {type: String, label: '线索批次'},
-        线索增加批次: {type: Number, label: '线索增加批次'},
         线索批次内小序号: {type: Number, label: '线索批次内小序号'},
         发现日期: {type: Types.Date, label: '发现日期'},
         发现人: {type: String, label: '发现人'},
@@ -61,9 +59,7 @@ Case.add({
         自查租片结果: {type: Types.Select, options: '有租片,无租片', label: '自查租片结果'},
         "租片查询人": {type: String, label: '租片查询人'},
         代理商租片查询批次: {type: String, label: '代理商租片查询批次'},
-        租片查询批次: {type: Number, label: '租片查询批次'}
         代理商租片查询日期: {type: String, label: '代理商租片查询日期'},
-        租片查询日期: {type: Types.Date, label: '租片查询日期'}
         华盖租片查询状态: {type: Types.Select, options: '未查询,查询中,数据比对中,完成', label: '华盖租片查询状态'},
         华盖反馈日期: {type: Types.Date, label: '华盖反馈日期'},
         华盖租片查询结果: {type: Types.Select, options: '有租片,无租片,无结果', label: '华盖租片查询结果'},
@@ -75,11 +71,9 @@ Case.add({
     {
         "公证人": {type: String, label: '公证人'},
         公证批次: {type: String, label: '公证批次'},
-        公证申请批次: {type: Number, label: '公证申请批次'}
         公证形式: {type: Types.Select, options: '公证处,电子公证,简易取证', label: '公证形式'},
         公证状态: {type: Types.Select, options: '未申请,已申请,已保全,已出证', label: '公证状态'},
         申请公证日期: {type: String, label: '申请公证日期'},
-        公证申请日期: {type: Types.Date, label:'公证申请日期'}
         公证书编号: {type: String, label: '公证书编号'},
         分摊公证成本: {type: Types.Money, label: '分摊公证成本'},
         "分摊公证附加费": {type: Types.Money, label: '分摊公证附加费'},
@@ -91,6 +85,7 @@ Case.add({
     },
     '线索处理意见',
     {
+        线索处理批次: {type: String, label: '线索处理批次'},
         线索处理意见: {type: Types.Select, options: '诉讼,放弃,暂缓', label: '线索处理意见'},
         放弃原因: {type: Types.Select, options: '正常租片,主体不适格,保全不能', label: '放弃原因'},
         线索处理备注: {type: String, label: '线索处理备注'},
