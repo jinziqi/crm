@@ -40,7 +40,6 @@ Case.add({
             options: '官网(商业),官网(资讯),门户资讯网站,普通资讯网站,企业微博,企业公众号,大型直营电商,小型直营电商,大型电商三方,小型电商三方,大流量APP,其他APP,印刷品,其他',
             label: '侵权形式'
         },
-        "线索录入方ID": {type: String, label: '线索录入方ID'},
         线索批次: {type: String, label: '线索批次'},
         线索批次内小序号: {type: Number, label: '线索批次内小序号'},
         发现日期: {type: Types.Date, label: '发现日期'},
@@ -50,13 +49,13 @@ Case.add({
     },
     '案件筛选',
     {
-        "主体查询方ID": {type: String, label: '主体查询方ID'},
+        "主体查询人": {type: String, label: '主体查询人'},
         主体查询批次: {type: String, label: '主体查询批次'},
         主体查询日期: {type: String, label: '主体查询日期'},
         主体查询状态: {type: Types.Select, options: '未查询,查询中,完成', label: '主体查询状态'},
         自查租片日期: {type: Types.Date, label: '自查租片日期'},
         自查租片结果: {type: Types.Select, options: '有租片,无租片', label: '自查租片结果'},
-        "代理商租片查询方ID": {type: String, label: '代理商租片查询方ID'},
+        "租片查询人": {type: String, label: '租片查询人'},
         代理商租片查询批次: {type: String, label: '代理商租片查询批次'},
         代理商租片查询日期: {type: String, label: '代理商租片查询日期'},
         华盖租片查询状态: {type: Types.Select, options: '未查询,查询中,数据比对中,完成', label: '华盖租片查询状态'},
@@ -68,7 +67,7 @@ Case.add({
     },
     '证据保全',
     {
-        "公证方ID": {type: String, label: '公证方ID'},
+        "公证人": {type: String, label: '公证人'},
         公证批次: {type: String, label: '公证批次'},
         公证形式: {type: Types.Select, options: '公证处,电子公证,简易取证', label: '公证形式'},
         公证状态: {type: Types.Select, options: '未申请,已申请,已保全,已出证', label: '公证状态'},
