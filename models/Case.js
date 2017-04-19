@@ -41,6 +41,7 @@ Case.add({
             label: '侵权形式'
         },
         线索批次: {type: String, label: '线索批次'},
+        案件线索批次: {type: Number, label: '案件线索批次'},
         线索批次内小序号: {type: Number, label: '线索批次内小序号'},
         发现日期: {type: Types.Date, label: '发现日期'},
         发现人: {type: String, label: '发现人'},
