@@ -50,7 +50,9 @@ Case.add({
     '案件筛选',
     {
         "主体查询人": {type: String, label: '主体查询人'},
+        案件主体查询批次: {type: Number, label: '案件主体查询批次'},
         主体查询批次: {type: String, label: '主体查询批次'},
+        案件主体查询日期: {type: Types.Date, label: '案件主体查询日期'},
         主体查询日期: {type: String, label: '主体查询日期'},
         主体查询状态: {type: Types.Select, options: '未查询,查询中,完成', label: '主体查询状态'},
         自查租片日期: {type: Types.Date, label: '自查租片日期'},
