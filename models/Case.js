@@ -97,6 +97,11 @@ Case.add({
         公证书提供日期: {type: Types.Date, label: '公证书提供日期'},
         公证书提供数量: {type: Number, label: '公证书提供数量'},
         公证书提供快递公司及单号: {type: String, label: '公证书提供快递公司及单号'},
+        授权书发出日期: {type: Types.Date, label: '授权书发出日期'},
+        授权内容: {type: String, label: '授权内容'},
+        授权截止日期: {type: Types.Date, label: '授权截止日期'},
+        授权书发出快递公司及单号: {type: String, label: '授权书发出快递公司及单号'},
+        授权书备注: {type: String, label: '授权书备注'},
     },
     '证据材料',
     {
