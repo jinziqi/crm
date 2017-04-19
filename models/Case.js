@@ -134,7 +134,7 @@ Case.add({
     },
     '诉讼',
     {
-        诉讼批次: {type: String, label: '诉讼批次'},
+        诉讼批次: {type: Number, label: '诉讼批次'},
         起诉书发出日期: {type: Types.Date, label: '起诉书发出日期'},
         起诉书发出快递公司及单号: {type: String, label: '起诉书发出快递公司及单号'},
         案件受理日期: {type: String, label: '案件受理日期'},
