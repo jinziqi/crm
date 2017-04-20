@@ -134,8 +134,9 @@ Case.add({
     {
         是否以租代赔: {type: Types.Select, options: '是,否', label: '是否以租代赔'},
         以租代赔批次: {type: Number, label: '以租代赔批次'},
-        最低谈判金额: {type: Types.Money, label: '最低谈判金额'},
+        以租代赔协商结果: {type: Types.Select, options: '转为购图用户,转回诉讼程序', label: '以租代赔协商结果'},
         以租代赔合同金额: {type: Types.Money, label: '以租代赔合同金额'},
+        以租代赔合同内容: {type: String, label: '以租代赔合同内容'},
     },
     '诉讼',
     {
