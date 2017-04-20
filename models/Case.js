@@ -174,7 +174,7 @@ Case.add({
         "赔偿形式（到律所）": {type: Types.Select, options: '银行汇款,现金,法院支票,其他', label: '赔偿形式（到律所）'},
         "实际赔偿日期（到公司）": {type: Types.Date, label: '实际赔偿日期（到公司）'},
         "实际赔偿金额（到公司）": {type: Types.Money, label: '实际赔偿金额（到公司）'},
-        "赔偿形式（到公司）": {type: Types.Select, options: '银行汇款,现金,法院支票,其他', label: '赔偿形式（到公司）'},
+        "赔偿形式（到公司）": {type: Types.Select, options: '银行汇款,现金,法院支票,支付宝,其他', label: '赔偿形式（到公司）'},
         赔偿款备注: {type: String, label: '赔偿款备注'},
         赔偿状态: {type: Types.Select, options: '赔偿中,赔偿完毕,强制执行中,放弃', label: '赔偿状态'},
     },
