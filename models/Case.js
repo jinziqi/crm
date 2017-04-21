@@ -20,6 +20,7 @@ Case.add({
     '案件基本',
     {
         "案件批次": {type: Number, label: '案件批次'},
+        案件标签: {type: String, label: '案件标签'},
         "临时标签": {type: String, label: '临时标签'},
         案件编号: {type: Number, label: '案件编号'},
         合作方案件编号: {type: String, label: '合作方案件编号'},
