@@ -79,6 +79,7 @@ Case.add({
         公证形式: {type: Types.Select, options: '公证处,电子公证,简易取证', label: '公证形式'},
         公证机构名称: {type: String, label: '公证机构名称'},
         公证状态: {type: Types.Select, options: '未申请,已申请,已保全,已出证', label: '公证状态'},
+        保全日期: {type: Types.Date, label: '保全日期'},
         出证日期: {type: Types.Date, label: '出证日期'},
         公证书编号: {type: String, label: '公证书编号'},
         分摊公证成本: {type: Types.Money, label: '分摊公证成本'},
