@@ -26,6 +26,7 @@ Case.add({
         图片编号: {type: String, label: '图片编号'},
         "图片编号补正": {type: Types.Select, options: '编号有误需补正,补正完毕,无需补正', label: '图片编号补正'},
         隶属主体侵权图片总数量: {type: Number, label: '隶属主体侵权图片总数量'},
+        地区: {type: String, label: '地区'},
         侵权主体: {type: String, label: '侵权主体'},
         "ICP备案号": {type: String, label: 'ICP备案号'},
         品牌: {type: String, label: '品牌'},
