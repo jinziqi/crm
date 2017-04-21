@@ -236,5 +236,5 @@ Case.schema.pre('save', function (next) {
 
 Case.permission = true;
 
-Case.defaultColumns = 'name|250px,批次,案件编号,侵权形式,图片编号,侵权主体,侵权页面链接,图片位置描述,页面内容描述,线索处理意见,放弃原因,案件状态';
+Case.defaultColumns = 'name|100px,案件编号,侵权形式,图片编号,侵权页面链接,负责律所,诉讼状态';
 Case.register();
