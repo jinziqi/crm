@@ -165,6 +165,7 @@ Case.add({
         和解协议快递公司及单号: {type: String, label: '和解协议快递公司及单号'},
         和解协议是否返回: {type: Types.Select, options: '是,否', label: '和解协议是否返回'},
         和解协议备注: {type: String, label: '和解协议备注'},
+        存档编号: {type: Number, label: '存档编号'},
         需要其他诉讼材料: {type: Types.Date, label: '需要其他诉讼材料'},
         其他诉讼材料名称: {type: String, label: '其他诉讼材料名称'},
         其他诉讼材料发出日期: {type: Types.Date, label: '其他诉讼材料发出日期'},
