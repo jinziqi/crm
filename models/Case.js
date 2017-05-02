@@ -61,7 +61,7 @@ Case.add({
         主体查询状态: {type: Types.Select, options: '未查询,查询中,完成', label: '主体查询状态'},
         主体查询结果: {type: Types.Select, options: '符合诉讼条件,不符合条件', label: '主体查询结果'},
         主体放弃原因: {type: Types.Select, options: '公司已注销,无ICP备案信息,个人,公司规模小,其他', label: '主体放弃原因'},
-        "主体查询备注": {type: String, label: '主体查询备注'},   
+        "主体查询备注": {type: String, label: '主体查询备注'},
         自查租片日期: {type: Types.Date, label: '自查租片日期'},
         自查租片结果: {type: Types.Select, options: '有租片,无租片', label: '自查租片结果'},
         "租片查询人": {type: String, label: '租片查询人'},
@@ -240,5 +240,5 @@ Case.schema.pre('save', function (next) {
 
 Case.permission = true;
 
-Case.defaultColumns = 'name|200px,案件编号|75px,侵权形式,图片编号,侵权页面链接,发现人,负责律所,诉讼状态';
+Case.defaultColumns = 'name|200px,案件编号|75px,侵权形式,图片编号,侵权页面链接,发现人,线索处理意见,负责律所,诉讼状态';
 Case.register();
