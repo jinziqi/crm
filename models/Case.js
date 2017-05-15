@@ -212,7 +212,7 @@ Case.add({
         "诉讼费退还日期二审（到公司）": {type: Types.Date, label: '诉讼费退还日期二审（到公司）'},
         "退费形式二审（到公司）": {type: Types.Select, options: '银行汇款,现金,法院支票,其他', label: '退费形式二审（到公司）'},
         退还诉讼费备注: {type: String, label: '退还诉讼费备注'},
-        "快递费": {type: Types.Money, label: '快递费）'},
+        "快递费": {type: Types.Money, label: '快递费'},
         "判决/调解赔偿金额": {type: Types.Money, label: '判决/调解赔偿金额'},
         "赔偿款实际支付人（到律所）": {type: String, label: '赔偿款实际支付人（到律所）'},
         "实际赔偿日期（到律所）": {type: Types.Date, label: '实际赔偿日期（到律所）'},
