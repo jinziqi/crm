@@ -89,6 +89,7 @@ Case.add({
         "分摊公证附加费": {type: Types.Money, label: '分摊公证附加费'},
         "公证费结算批次": {type: Number, label: '公证费结算批次'},
         "隶属公证费单笔支付金额": {type: Types.Money, label: '隶属公证费单笔支付金额'},
+        "隶属公证附加费单笔支付金额": {type: Types.Money, label: '隶属公证附加费单笔支付金额'},
         "隶属公证费单笔支付日期": {type: Types.Date, label: '隶属公证费单笔支付日期'},
         "是否取消公证": {type: Types.Select, options: '取消公证,正常', label: '是否取消公证'},
         公证取消原因: {type: Types.Select, options: '图片下线,主体不适格,正常租片,其他', label: '公证取消原因'},
