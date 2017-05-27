@@ -99,6 +99,7 @@ Case.add({
     {
         线索处理意见: {type: Types.Select, options: '诉讼,放弃,暂缓', label: '线索处理意见'},
         放弃原因: {type: Types.Select, options: '正常租片,主体不适格,保全不能', label: '放弃原因'},
+        线索放弃原因: {type: Types.Select, options: '正常租片,主体不适格,保全不能,重复线索', label: '线索放弃原因'},
         线索处理备注: {type: String, label: '线索处理备注'},
     },
     '移交律师',
@@ -126,6 +127,11 @@ Case.add({
         原始图提供快递公司及单号: {type: String, label: '原始图提供快递公司及单号'},
         胶片回收日期: {type: Types.Date, label: '胶片回收日期'},
         胶片备注: {type: String, label: '胶片备注'},
+        "需要肖像权协议": {type: Types.Date, label: '需要肖像权协议'},
+        肖像权协议提供日期: {type: Types.Date, label: '肖像权协议提供日期'},
+        肖像权协议快递单号: {type: String, label: '肖像权协议快递单号'},
+        肖像权协议形式: {type: Types.Select, options: '原件,扫描件,纸质复印件', label: '肖像权协议'},
+        模特名称: {type: String, label: '模特名称'},
         "需要委托创作说明": {type: Types.Date, label: '需要委托创作说明'},
         作品委托创作说明提供日期: {type: Types.Date, label: '作品委托创作说明提供日期'},
         作品委托创作说明快递单号: {type: String, label: '作品委托创作说明快递单号'},
@@ -157,7 +163,7 @@ Case.add({
         被告人: {type: String, label: '被告人'},
         立案法院: {type: String, label: '立案法院'},
         法院案号: {type: String, label: '法院案号'},
-        诉讼状态: {type: Types.Select, options: '待立案,已立案,一审开庭,二审开庭,判决,和解/调解,撤诉,放弃', label: '诉讼状态'},
+        诉讼状态: {type: Types.Select, options: '未立案,待立案,已立案,一审开庭,二审开庭,判决,和解/调解,撤诉,放弃', label: '诉讼状态'},
         一审开庭日期: {type: Types.Date, label: '一审开庭日期'},
         一审判决日期: {type: Types.Date, label: '一审判决日期'},
         二审开庭日期: {type: Types.Date, label: '二审开庭日期'},
@@ -243,6 +249,7 @@ Case.add({
         案件状态总结: {type: Types.Select, options: '进行中,撤销,结案', label: '案件状态总结'},
         案件备注: {type: String, label: '案件备注'},
         导入表格文件名: {type: String, label: '导入表格文件名'},
+        案件特别提醒: {type: String, label: '案件特别提醒'},
     }
 );
 
@@ -263,5 +270,5 @@ Case.schema.pre('save', function (next) {
 
 Case.permission = true;
 
-Case.defaultColumns = 'name|200px,案件编号|75px,侵权形式,图片编号,侵权页面链接,发现人,线索处理意见,负责律所,诉讼状态';
+Case.defaultColumns = 'name|200px,案件编号|75px,侵权形式,图片编号,侵权页面链接,发现人,线索处理意见,线索放弃原因,负责律所,诉讼状态,诉讼放弃原因,案件特别提醒';
 Case.register();
