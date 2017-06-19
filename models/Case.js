@@ -186,6 +186,8 @@ Case.add({
     {
         预付诉讼费: {type: Types.Money, label: '预付诉讼费'},
         "预付日期": {type: Types.Date, label: '预付日期'},
+        "隶属预付诉讼费单笔金额": {type: Types.Money, label: '隶属预付诉讼费单笔金额'},
+        "隶属预付诉讼费单笔日期": {type: Types.Date, label: '隶属预付诉讼费单笔日期'},
         "预付诉讼费(一审第二次)": {type: Types.Money, label: '预付诉讼费(一审第二次)'},
         "预付日期(一审第二次)": {type: Types.Date, label: '预付日期(一审第二次)'},
         "预付诉讼费(一审第三次)": {type: Types.Money, label: '预付诉讼费(一审第三次)'},
