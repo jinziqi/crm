@@ -60,7 +60,7 @@ Case.add({
         主体查询时间: {type: Types.Date, label: '主体查询时间'},
         主体查询状态: {type: Types.Select, options: '未查询,查询中,完成', label: '主体查询状态'},
         主体查询结果: {type: Types.Select, options: '符合诉讼条件,不符合条件', label: '主体查询结果'},
-        主体放弃原因: {type: Types.Select, options: '公司已注销,无ICP备案信息,个人,公司规模小,其他', label: '主体放弃原因'},
+        主体放弃原因: {type: Types.Select, options: '图片已下线,公司已注销,无ICP备案信息,无主体认证信息,个体工商户,个人,公司规模小,其他', label: '主体放弃原因'},
         "主体查询备注": {type: String, label: '主体查询备注'},
         自查租片日期: {type: Types.Date, label: '自查租片日期'},
         自查租片结果: {type: Types.Select, options: '有租片,无租片', label: '自查租片结果'},
@@ -150,6 +150,7 @@ Case.add({
         以租代赔协商结果: {type: Types.Select, options: '转为购图用户,转回诉讼程序', label: '以租代赔协商结果'},
         以租代赔合同金额: {type: Types.Money, label: '以租代赔合同金额'},
         以租代赔合同内容: {type: String, label: '以租代赔合同内容'},
+        "以租代赔合同存档编号": {type: Number, label: '以租代赔合同存档编号'},
     },
     '诉讼',
     {
@@ -271,5 +272,5 @@ Case.schema.pre('save', function (next) {
 
 Case.permission = true;
 
-Case.defaultColumns = 'name|200px,案件编号|75px,侵权形式,图片编号,侵权页面链接,发现人,线索处理意见,线索放弃原因,负责律所,诉讼状态,放弃诉讼原因,案件特别提醒';
+Case.defaultColumns = 'name|200px,案件编号|75px,案件批次,侵权形式,图片编号,侵权页面链接,发现人,线索处理意见,线索放弃原因,负责律所,诉讼状态,放弃诉讼原因,案件特别提醒';
 Case.register();
