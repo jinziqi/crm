@@ -87,7 +87,6 @@ Case.add({
         公证书编号: {type: String, label: '公证书编号'},
         分摊公证成本: {type: Types.Money, label: '分摊公证成本'},
         "分摊公证附加费": {type: Types.Money, label: '分摊公证附加费'},
-        "公证费结算批次": {type: Number, label: '公证费结算批次'},
         "公证费结算申请日期": {type: Types.Date, label: '公证费结算申请日期'},
         "隶属公证费单笔支付金额": {type: Types.Money, label: '隶属公证费单笔支付金额'},
         "隶属公证附加费单笔支付金额": {type: Types.Money, label: '隶属公证附加费单笔支付金额'},
