@@ -244,6 +244,7 @@ Case.add({
         退费收据快递公司及单号: {type: String, label: '退费收据快递公司及单号'},
         退费收据备注: {type: String, label: '退费收据备注'},
         赔偿款收据开具日期: {type: Types.Date, label: '赔偿款收据开具日期'},
+        "是否为发票": {type: Types.Select, options: '是,否', label: '是否为发票'},
         赔偿款收据快递公司及单号: {type: String, label: '赔偿款收据快递公司及单号'},
         赔偿款收据备注: {type: String, label: '赔偿款收据备注'},
     },
