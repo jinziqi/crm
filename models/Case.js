@@ -98,7 +98,7 @@ Case.add({
     '线索处理意见',
     {
         线索处理意见: {type: Types.Select, options: '诉讼,放弃,暂缓', label: '线索处理意见'},
-        线索放弃原因: {type: Types.Select, options: '正常租片,主体不适格,保全不能,重复线索', label: '线索放弃原因'},
+        线索放弃原因: {type: Types.Select, options: '正常租片,主体不适格,保全不能,重复线索,其他', label: '线索放弃原因'},
         线索处理备注: {type: String, label: '线索处理备注'},
     },
     '移交律师',
