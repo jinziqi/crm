@@ -129,7 +129,7 @@ Case.add({
         "需要肖像权协议": {type: Types.Date, label: '需要肖像权协议'},
         肖像权协议提供日期: {type: Types.Date, label: '肖像权协议提供日期'},
         肖像权协议快递单号: {type: String, label: '肖像权协议快递单号'},
-        肖像权协议形式: {type: Types.Select, options: '原件,扫描件,纸质复印件', label: '肖像权协议'},
+        肖像权协议形式: {type: Types.Select, options: '原件,扫描件,纸质复印件', label: '肖像权协议形式'},
         模特姓名: {type: String, label: '模特姓名'},
         "需要委托创作说明": {type: Types.Date, label: '需要委托创作说明'},
         作品委托创作说明提供日期: {type: Types.Date, label: '作品委托创作说明提供日期'},
