@@ -25,7 +25,6 @@ Case.add({
         案件编号: {type: Number, label: '案件编号'},
         合作方案件编号: {type: String, label: '合作方案件编号'},
         图片编号: {type: String, label: '图片编号'},
-        "图片编号补正": {type: Types.Select, options: '编号有误需补正,补正完毕,无需补正', label: '图片编号补正'},
         地区: {type: String, label: '地区'},
         侵权主体: {type: String, label: '侵权主体'},
         "ICP备案号": {type: String, label: 'ICP备案号'},
@@ -210,6 +209,7 @@ Case.add({
         案件备注: {type: String, label: '案件备注'},
         导入表格文件名: {type: String, label: '导入表格文件名'},
         案件特别提醒: {type: String, label: '案件特别提醒'},
+        "图片编号补正": {type: Types.Select, options: '编号有误需补正,补正完毕,无需补正', label: '图片编号补正'},
     }
 );
 
