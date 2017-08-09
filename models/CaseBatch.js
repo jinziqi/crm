@@ -1,4 +1,4 @@
-var keystone = require('keystone');
+﻿var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
@@ -13,7 +13,6 @@ var CaseBatch = new keystone.List('CaseBatch', {
 CaseBatch.add({
     name: { type: String, required: true, label:'案件批次名称' },
     "案件批次编号": {type: Number, label: '案件批次编号'},
-    "案件批次记录": {type: Types.Markdown, height: 100, label: '案件批次记录'},
   },
   '线索增加',
   {
@@ -45,7 +44,7 @@ CaseBatch.add({
   },
   '案件移交律所',
   {
-    "案件移交日期": {type: Types.Date, label: '"案件移交日期'},
+    "案件移交日期": {type: Types.Date, label: '案件移交日期'},
     "案件负责律所": {type: Types.Select, options: '北京隆安,江苏海辉,上海计易,深圳谢涛,张宏麟,西安王正兴,其他', label: '案件负责律所'},
 });
 
