@@ -10,5 +10,5 @@ Test.add({
     });
 
     Batch.relationship({ ref: 'Case', path: 'Test' });
-    Batch.defaultColumns = '编号';
+    Batch.defaultColumns = 'name';
     Batch.register();
