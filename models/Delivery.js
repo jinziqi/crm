@@ -11,11 +11,8 @@ var Delivery = new keystone.List('Delivery', {
 });
 
 Delivery.add({
+  "自动编号": {type: Number, label: '自动编号'},
     name: { type: String, required: true, label:'发送材料' },
-  },
-  '测试分割线',
-  {
-    "自动编号": {type: Number, label: '自动编号'},
 });
 
 Delivery.relationship({ ref: 'Case', path: 'Delivery' });
