@@ -7,7 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Batch = new keystone.List('Batch', {
-    label: '批次'
+    label: '标签'
 });
 
 Batch.add({
