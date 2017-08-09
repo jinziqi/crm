@@ -1,4 +1,4 @@
-﻿/**
+/**
  * This file contains the common middleware used by your routes.
  *
  * Extend or replace these functions as your application requires.
@@ -21,15 +21,6 @@ exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: '首页', key: 'case', href: '/' },
         { label: '导入', key: 'import', href: '/import'},
-	];
-	res.locals.user = req.user;
-	next();
-};
-
-exports.initLocals = function (req, res, next) {
-	res.locals.navLinks = [
-		{ label: '首页', key: 'CaseBatch', href: '/' },
-        { label: '案件批次导入', key: 'import', href: '/import'},
 	];
 	res.locals.user = req.user;
 	next();
