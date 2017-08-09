@@ -12,9 +12,8 @@ var CaseBatch = new keystone.List('CaseBatch', {
 
 CaseBatch.add({
     name: { type: String, required: true, label:'案件批次名称' },
-    "案件批次编号": {type: Number, label: '案件批次编号'},
 });
 
-Batch.relationship({ ref: 'Case', path: 'CaseBatch' });
-Batch.defaultColumns = 'name';
-Batch.register();
+CaseBatch.relationship({ ref: 'Case', path: 'CaseBatch' });
+CaseBatch.defaultColumns = 'name';
+CaseBatch.register();
