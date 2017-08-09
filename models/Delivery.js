@@ -19,5 +19,5 @@ Delivery.add({
 });
 
 Delivery.relationship({ ref: 'Case', path: 'Delivery' });
-Delivery.defaultColumns = 'name';
+Delivery.defaultColumns = '自动编号';
 Delivery.register();
