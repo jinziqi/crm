@@ -13,6 +13,10 @@ var Batch = new keystone.List('Batch', {
 Batch.add({
     name: { type: String, required: true, label:'名称' },
     "测试字段": {type: String, label: '测试字段'},
+  },
+  '测试分割线',
+  {
+    "测试字段2": {type: String, label: '测试字段2'},
 });
 
 Batch.relationship({ ref: 'Case', path: 'batch' });
