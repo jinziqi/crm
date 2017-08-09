@@ -2,7 +2,7 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * 
+ *
  * ==========
  */
 
@@ -15,7 +15,7 @@ Delivery.add({
   },
   '测试分割线',
   {
-    "测试字段2": {type: String, label: '测试字段2'},
+    "自动编号": {type: Number, label: '自动编号'},
 });
 
 Delivery.relationship({ ref: 'Case', path: 'Delivery' });
