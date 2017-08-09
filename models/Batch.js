@@ -9,7 +9,6 @@ var Types = keystone.Field.Types;
 var Batch = new keystone.List('Batch', {
     label: '批次'
     plural: '批次',
-    track: true
 });
 
 Batch.add({
