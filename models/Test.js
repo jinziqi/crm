@@ -5,10 +5,10 @@ var Test = new keystone.List('Test', {
 });
 
 Test.add({
-    序号: { type: Number, required: true, label:'序号' },
-    名称: { type: String, label:'名称' },
-});
+      name: { type: String, required: true, label:'名称' },
+      编号: { type: Number, label:'编号' }
+    });
 
-Test.relationship({ ref: 'Case', path: 'Test' });
-Test.defaultColumns = '序号';
-Test.register();
+    Batch.relationship({ ref: 'Case', path: 'Test' });
+    Batch.defaultColumns = '编号';
+    Batch.register();
