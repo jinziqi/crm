@@ -70,7 +70,6 @@ keystone.set('signin logo', null);
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
     案件: ['cases','CaseBatch','batches'],
-		材料: ['Delivery'],
 	  用户: ['users', 'roles'],
 });
 
