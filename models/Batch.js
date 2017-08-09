@@ -12,7 +12,7 @@ var Batch = new keystone.List('Batch', {
 
 Batch.add({
     name: { type: String, required: true, label:'名称' },
-    "案件批次编号": {type: Number, required: true, label: '案件批次编号'},
+    "案件批次编号": {type: Number, label: '案件批次编号'},
     "案件主要内容": { type: String, label:'名称' },
   },
   '测试分割线',
