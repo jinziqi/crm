@@ -1,4 +1,4 @@
-var keystone = require('keystone');
+﻿var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
@@ -14,7 +14,7 @@ var Case = new keystone.List('Case', {
 
 Case.add({
         name: {type: String, required: true, label: '名称'},
-        批次: {type: Types.Relationship, ref: 'Batch', label: '批次', many: true},
+        标签: {type: Types.Relationship, ref: 'Batch', label: '标签', many: true},
         accessUsers: {type: Types.Relationship, ref: 'User', index: true, many: true, label: '可见用户'},
     },
     '案件基本',
