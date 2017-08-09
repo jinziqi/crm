@@ -15,6 +15,7 @@ var Case = new keystone.List('Case', {
 Case.add({
         name: {type: String, required: true, label: '名称'},
         批次: {type: Types.Relationship, ref: 'Batch', label: '批次', many: true},
+        测试关联序号: {type: Types.Relationship, ref: 'Test', label: '测试关联序号' },
         accessUsers: {type: Types.Relationship, ref: 'User', index: true, many: true, label: '可见用户'},
     },
     '案件基本',
