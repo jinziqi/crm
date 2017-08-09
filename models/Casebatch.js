@@ -2,15 +2,15 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * 案件批次 Model
+ * Casebatch Model
  * ==========
  */
 
-var 案件批次 = new keystone.List('案件批次', {
+var Casebatch = new keystone.List('Casebatch', {
     label: '案件批次'
 });
 
-案件批次.add({
+Casebatch.add({
     name: { type: String, required: true, label:'案件批次' },
     "案件批次编号": {type: Number, label: '案件批次编号'},
     "案件批次记录": {type: Types.Markdown, height: 100, label: '案件批次记录'},
@@ -49,6 +49,6 @@ var 案件批次 = new keystone.List('案件批次', {
     "案件负责律所": {type: Types.Select, options: '北京隆安,江苏海辉,上海计易,深圳谢涛,张宏麟,西安王正兴,其他', label: '案件负责律所'},
 });
 
-Batch.relationship({ ref: 'Case', path: '案件批次' });
+Batch.relationship({ ref: 'Case', path: 'Casebatch' });
 Batch.defaultColumns = 'name';
 Batch.register();
