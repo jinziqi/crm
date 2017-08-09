@@ -71,6 +71,7 @@ keystone.set('signin logo', null);
 keystone.set('nav', {
     案件: ['cases','CaseBatch','batches'],
 	  用户: ['users', 'roles'],
+		材料: ['Delivery'],
 });
 
 // Start Keystone to connect to your database and initialise the web server
