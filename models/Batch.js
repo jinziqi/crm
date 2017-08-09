@@ -14,6 +14,7 @@ Batch.add({
     name: { type: String, required: true, label:'名称' },
     "案件批次编号": {type: Number, label: '案件批次编号'},
     "案件批次记录": {type: String, label: '案件批次记录'},
+    "测试序列": getNextSequenceValue("Batch"),
   },
   '线索增加',
   {
