@@ -50,5 +50,5 @@ CaseBatch.add({
 });
 
 CaseBatch.relationship({ ref: 'Case', path: 'CaseBatch' });
-CaseBatch.defaultColumns = 'name';
+CaseBatch.defaultColumns = 'name,案件批次编号,线索来源,主体查询状态,租片查询状态,证据保全状态,案件负责律所';
 CaseBatch.register();
