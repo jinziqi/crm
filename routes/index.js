@@ -40,7 +40,7 @@ exports = module.exports = function (app) {
     app.get('/', middleware.requireUser, routes.views.index);
 	app.all('/import', [middleware.requireAdmin,upload.single('import_file')], routes.views.import);
 	app.get('/import/template', middleware.requireAdmin, routes.views.template);
-	app.all('/importcasebatch', [middleware.requireAdmin,upload.single('import_file')], routes.views.import);
+	app.all('/importcasebatch', [middleware.requireAdmin,upload.single('import_file')], routes.views.importcasebatch);
 	app.get('/importcasebatch/template', middleware.requireAdmin, routes.views.template);
 
 };
