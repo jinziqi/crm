@@ -33,7 +33,6 @@ CaseBatch.add({
   '租片查询',
   {
     "租片查询批次": {type: Number, label: '租片查询批次'},
-    "租片查询代理商": {type: Types.Select, options: '华盖,全景', label: '租片查询代理商'},
     "租片查询申请日期": {type: Types.Date, label: '租片查询申请日期'},
     "华盖反馈日期": {type: Types.Date, label: '华盖反馈日期'},
     "全景反馈日期": {type: Types.Date, label: '全景反馈日期'},
