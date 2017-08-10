@@ -110,16 +110,16 @@ exports = module.exports = function (req, res) {
                     (function (row, rowNum, action, updateId) {
                         dataUpdates.push(function (next) {
                             if(action === 'insert') {
-                                Case.updateItem(new Case.model(), row, {}, function (err) {
+                                CaseBatch.updateItem(new CaseBatch.model(), row, {}, function (err) {
                                     if(err) {
                                         locals.errors.push({row: rowNum + 1, detail: err.detail});
                                     }
                                     next();
                                 })
                             } else if (action === 'update') {
-                                Case.model.findById(updateId, function (err, model) {
+                                CaseBatch.model.findById(updateId, function (err, model) {
                                     if(model) {
-                                        Case.updateItem(model, row, {fields:update_fields}, function (err) {
+                                        CaseBatch.updateItem(model, row, {fields:update_fields}, function (err) {
                                             if(err) {
                                                 locals.errors.push({row: rowNum + 1, detail: err.detail});
                                             }
