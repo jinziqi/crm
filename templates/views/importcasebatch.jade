@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block content
+    .container: .row: .col-sm-8.col-md-9
+        h3 Import
+        form(method="post", enctype="multipart/form-data")
+            input(type="file", name="import_file")
+            button(type="submit")= "Submit"
+
+        p: a(href="/importcasebatch/template") Download Template
+
+        each error in errors
+            p: =error.row
+            each field in error.detail
+                p: =field.fieldLabel + '出错'
