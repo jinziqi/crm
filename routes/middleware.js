@@ -21,6 +21,7 @@ exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: '首页', key: 'case', href: '/' },
         { label: '导入', key: 'import', href: '/import'},
+				        { label: '导入案件批次', key: 'importcasebatch', href: '/importcasebatch'},
 	];
 	res.locals.user = req.user;
 	next();
