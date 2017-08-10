@@ -19,7 +19,7 @@ CaseBatch.add({
   '线索增加',
   {
     "线索增加批次": {type: Number, label: '线索增加批次'},
-    "线索来源": {type: Types.Select, options: '主任,公司,上海计易,作品通,张宏麟,其他', label: '线索来源'},
+    "线索来源": {type: Types.Select, options: '主任,公司,上海计易,作品通,张宏麟,外协,其他', label: '线索来源'},
     "添加日期": {type: Types.Date, label: '添加日期'},
   },
   '主体查询',
