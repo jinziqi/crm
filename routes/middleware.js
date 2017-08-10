@@ -20,7 +20,7 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: '首页', key: 'case', href: 'http://118.190.85.174/keystone/' },
-        { label: '导入', key: 'import', href: '/import'},
+        { label: '导入案件列表', key: 'import', href: '/import'},
 				        { label: '导入案件批次', key: 'importcasebatch', href: '/importcasebatch'},
 												        { label: '景象图片库', key: 'viewstock', href: 'http://www.viewstock.com'},
 	];
