@@ -19,7 +19,6 @@ Case.add({
     },
     '案件基本',
     {
-        "案件批次编号": {type: Types.Relationship, ref: 'CaseBatch', label: '案件批次编号'},
         "案件批次": {type: Number, label: '案件批次'},
         案件标签: {type: String, label: '案件标签'},
         "临时标签": {type: String, label: '临时标签'},
