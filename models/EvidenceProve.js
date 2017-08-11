@@ -13,7 +13,7 @@ var EvidenceProve = new keystone.List('EvidenceProve', {
 });
 
 EvidenceProve.add({
-        name: {type: String, required: true, label: '证书编号'},
+        name: {type: String, required: true, unique: true, label: '证书编号'},
         "保全内容": {type: String, label: '保全内容'},
         "保全成本": {type: Types.Money, label: '保全成本'},
         "保全附加费": {type: Types.Money, label: '保全附加费'},
