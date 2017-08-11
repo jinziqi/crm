@@ -142,10 +142,12 @@ Case.add({
         "预付诉讼费支付律所日期": {type: Types.Date, label: '预付诉讼费支付律所日期'},
         "实退诉讼费日期": {type: Types.Date, label: '实退诉讼费日期'},
         "实退诉讼费金额": {type: Types.Money, label: '实退诉讼费金额'},
+        "实退诉讼费收款人": {type: Types.Select, options: '公司,律所', label: '实退诉讼费收款人'},
         "应付赔偿金额": {type: Types.Money, label: '应付赔偿金额'},
         "赔偿款付款人": {type: String, label: '赔偿款付款人'},
         "收取赔偿款日期": {type: Types.Date, label: '收取赔偿款日期'},
         "收取赔偿款金额": {type: Types.Money, label: '收取赔偿款金额'},
+        "赔偿款收款人": {type: Types.Select, options: '公司,律所', label: '赔偿款收款人'},
     },
     '收据',
     {
