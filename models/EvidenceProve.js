@@ -20,5 +20,5 @@ EvidenceProve.add({
         "结算申请日期": {type: Types.Date, label: '结算申请日期'},
     }
 );
-EvidenceProve.defaultColumns = 'name';
+EvidenceProve.defaultColumns = 'name,主要保全内容,保全成本,保全附加费,结算申请日期';
 EvidenceProve.register();
