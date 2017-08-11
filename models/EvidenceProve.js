@@ -28,5 +28,15 @@ EvidenceProve.customFilter = function (where, user) {
     return where;
 };
 
+EvidenceProve.schema.pre('save', function (next) {
+    if (this.isNew) {
+        if (this.AccessEvidenceProve.length === 0 && this._req_user) {
+            this.AccessEvidenceProve.push(this._req_user._id);
+        }
+    }
+    next();
+});
+
+
 EvidenceProve.defaultColumns = 'name,保全内容,保全成本,保全附加费,结算申请日期,付款日期';
 EvidenceProve.register();
