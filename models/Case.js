@@ -144,8 +144,8 @@ Case.add({
         "实退诉讼费金额": {type: Types.Money, label: '实退诉讼费金额'},
         "应付赔偿金额": {type: Types.Money, label: '应付赔偿金额'},
         "赔偿款付款人": {type: String, label: '赔偿款付款人'},
-        "公司收款日期": {type: Types.Date, label: '公司收款日期'},
-        "公司收款金额": {type: Types.Money, label: '公司收款金额'},
+        "收取赔偿款日期": {type: Types.Date, label: '收取赔偿款日期'},
+        "收取赔偿款金额": {type: Types.Money, label: '收取赔偿款金额'},
     },
     '收据',
     {
