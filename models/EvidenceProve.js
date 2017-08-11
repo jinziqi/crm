@@ -14,11 +14,11 @@ var EvidenceProve = new keystone.List('EvidenceProve', {
 
 EvidenceProve.add({
         name: {type: String, required: true, label: '证书编号'},
-        "主要保全内容": {type: String, label: '主要保全内容'},
+        "保全内容": {type: String, label: '保全内容'},
         "保全成本": {type: Types.Money, label: '保全成本'},
         "保全附加费": {type: Types.Money, label: '保全附加费'},
         "结算申请日期": {type: Types.Date, label: '结算申请日期'},
     }
 );
-EvidenceProve.defaultColumns = 'name,主要保全内容,保全成本,保全附加费,结算申请日期';
+EvidenceProve.defaultColumns = 'name,保全内容,保全成本,保全附加费,结算申请日期';
 EvidenceProve.register();
