@@ -15,7 +15,6 @@ User.add({
 	password: { type: Types.Password, initial: true, required: true, label:'密码' },
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'System Admin', index: true },
-	AccessEvidenceProve: { type: Boolean, label: '证据保全表可见', index: true },
 	role: {type: Types.Relationship, ref: 'Role', label:'权限'},
 });
 
