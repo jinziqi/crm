@@ -21,5 +21,12 @@ EvidenceProve.add({
         "付款日期": {type: Types.Date, label: '付款日期'},
     }
 );
+
+EvidenceProve.customFilter = function (where, user) {
+    if (!user.AccessEvidenceProve)
+        where.AccessEvidenceProve = {$in: [user._id]};
+    return where;
+};
+
 EvidenceProve.defaultColumns = 'name,保全内容,保全成本,保全附加费,结算申请日期,付款日期';
 EvidenceProve.register();
