@@ -13,8 +13,7 @@ var EvidenceProve = new keystone.List('EvidenceProve', {
 });
 
 EvidenceProve.add({
-        name: {type: String, required: true, label: '证书编号'},
-        
+        name: {type: String, required: true, label: '证书编号'},        
     }
 );
 
