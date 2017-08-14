@@ -17,10 +17,10 @@ exports = module.exports = function (req, res) {
         var tasks = [];
         var dataUpdates = [];
 
-        var Delivery;
+        var Deliveries;
         tasks.push(function (next) {
             keystone.list('Delivery').model.find().exec(function (err, result) {
-                Delivery = result;
+                Deliveries = result;
                 next(err);
             });
         });
