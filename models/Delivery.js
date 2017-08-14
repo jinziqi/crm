@@ -57,6 +57,6 @@ Delivery.add({
     "快递费用": { type: types.Money, label: '快递费用' },
     "收寄备注": { type: String, label: '收寄备注' },
 });
-
+Delivery.relationship({ ref: 'Case', path: 'Delivery' });
 Delivery.defaultColumns = 'name,材料类型';
 Delivery.register();
