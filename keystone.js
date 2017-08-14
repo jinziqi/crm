@@ -10,7 +10,7 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': '美好景象维权管理系统',
+	'name': 'CRM',
 	'brand': '管理系统',
 
 	'sass': 'public',
