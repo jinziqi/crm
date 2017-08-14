@@ -58,5 +58,5 @@ Delivery.add({
     "收寄备注": { type: String, label: '收寄备注' },
 });
 
-Delivery.defaultColumns = '';
+Delivery.defaultColumns = 'name,材料类型';
 Delivery.register();
