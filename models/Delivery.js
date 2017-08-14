@@ -16,6 +16,7 @@ Delivery.add({
     "对应被告": { type: String, label: '对应被告' },
     "对应图片编号": { type: String, label: '对应图片编号' },
     "对应案件编号": { type: Number, label: '对应案件编号' },
+    "制作日期": { type: types.Date, label: '制作日期' },
 });
 
 Delivery.defaultColumns = 'name,材料类型,发送或收取,材料载体数量,收件单位,收件日期';
