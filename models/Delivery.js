@@ -12,6 +12,7 @@ var Delivery = new keystone.List('Delivery', {
 
 Delivery.add({
     name: { type: String, required: true, label:'材料名称' },
+    "材料序号": { type: Number, label: '材料序号' },
     "材料类型": {type: Types.Select, options: '数码原图,胶片,委托创作说明,肖像权协议,资质证件,版权登记证书,票据,法律服务协议,其他', label: '材料类型'},
     "对应被告": { type: String, label: '对应被告' },
     "对应图片编号": { type: String, label: '对应图片编号' },
