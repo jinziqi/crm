@@ -7,7 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Delivery = new keystone.List('Delivery', {
-    label: '发送材料'
+    label: '材料记录'
 });
 
 Delivery.add({

@@ -10,7 +10,7 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'CRM',
+	'name': '美好景象维权管理系统',
 	'brand': '管理系统',
 
 	'sass': 'public',
@@ -70,8 +70,8 @@ keystone.set('signin logo', null);
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
     案件: ['cases','CaseBatch','batches'],
-	  用户: ['users', 'roles'],
 		材料: ['Delivery','EvidenceProve'],
+		用户: ['users', 'roles'],
 });
 
 // Start Keystone to connect to your database and initialise the web server
