@@ -44,4 +44,7 @@ exports = module.exports = function (app) {
 	app.get('/importcasebatch/template', middleware.requireAdmin, routes.views.template);
 	app.all('/importevidenceprove', [middleware.requireAdmin,upload.single('import_file')], routes.views.importevidenceprove);
 	app.get('/importevidenceprove/template', middleware.requireAdmin, routes.views.template);
+	app.all('/importdelivery', [middleware.requireAdmin,upload.single('import_file')], routes.views.importdelivery);
+	app.get('/importdelivery/template', middleware.requireAdmin, routes.views.template);
+
 };
