@@ -23,7 +23,6 @@ exports.initLocals = function (req, res, next) {
     { label: '导入案件列表', key: 'import', href: '/import'},
 		{ label: '导入案件批次', key: 'importcasebatch', href: '/importcasebatch'},
 		{ label: '导入证据保全', key: 'importevidenceprove', href: '/importevidenceprove'},
-		{ label: '导入材料', key: 'importdelivery', href: '/importdelivery'},
 		{ label: '景象图片库', key: 'viewstock', href: 'http://www.viewstock.com'},
 	];
 	res.locals.user = req.user;
