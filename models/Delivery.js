@@ -13,11 +13,7 @@ var Delivery = new keystone.List('Delivery', {
 Delivery.add({
     name: { type: String, required: true, label:'材料名称' },
     "材料类型": { type: types.select, options: '材料类型,起诉书,数码原图,委托创作说明,上诉状,肖像权协议,授权书,资质证件,胶片,登记证书,票据,法律服务协议,公证书,和解协议,撤诉裁定,其他', label: '材料类型' },
-    "对应被告": { type: String, label: '对应被告' },
-    "对应图片编号": { type: String, label: '对应图片编号' },
-    "对应案件编号": { type: Number, label: '对应案件编号' },
-    "制作日期": { type: types.Date, label: '制作日期' },
-    "备注": { type: String, label: '备注' },
+
 });
 Delivery.relationship({ ref: 'Case', path: 'Delivery' });
 Delivery.defaultColumns = 'name,材料类型,发送或收取,材料载体数量,收件单位,收件日期';
