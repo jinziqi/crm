@@ -60,5 +60,5 @@ Delivery.add({
 
 });
 
-Delivery.defaultColumns = 'name,材料类型,发送或收取,材料载体数量,收件单位,收件日期';
+Delivery.defaultColumns = 'name,材料类型,发送或收取,材料载体数量,发件单位,发件日期,收件单位,收件日期';
 Delivery.register();
