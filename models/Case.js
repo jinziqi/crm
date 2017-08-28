@@ -78,7 +78,7 @@ Case.add({
     {
         移交批次: {type: Number, label: '移交批次'},
         移交日期: {type: Types.Date, label: '移交日期'},
-        负责律所: {type: Types.Select, options: '北京王斌,江苏海辉,上海计易,深圳谢涛,天津肖坤,西安王正兴,其他', label: '负责律所'},
+        负责律所: {type: Types.Select, options: '北京王斌,江苏海辉,上海计易,深圳谢涛,天津肖坤,张宏麟,西安王正兴,其他', label: '负责律所'},
         公证书提供日期: {type: Types.Date, label: '公证书提供日期'},
         公证书提供快递公司及单号: {type: String, label: '公证书提供快递公司及单号'},
         "需要授权书": {type: Types.Date, label: '需要授权书'},
